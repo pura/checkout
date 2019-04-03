@@ -1,0 +1,11 @@
+version: '2'
+services:
+    php-test:
+        container_name: php-test
+        build:
+            context: ./compose/php
+        restart: always
+        volumes:
+            - ./app:/srv
+        expose:
+            - 9000
