@@ -62,11 +62,7 @@ class AddToBasketHandler
             throw new ProductNotFoundException('product does not exists');
         }
 
-        $basketProduct = Entity\BasketProduct::fromProperties($product->getSku(),
-            $addToBasket->getQuantity(),
-            $product->getPrice());
-
-        $basket = $this->basketService->addProduct($basketProduct);
+        $basket = $this->basketService->addProduct($product, $addToBasket->getQuantity());
 
         $event = Event\AddToBasket::fromProperties($basket);
         $this->eventDispatcher->dispatch(Event\Events::EVENT_ADD_TO_BASKET, $event);

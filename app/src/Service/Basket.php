@@ -58,15 +58,18 @@ class Basket
     }
 
     /**
-     * @param Entity\BasketProduct $basketProduct
+     * @param Entity\Product $product
+     * @param int $quantity
      *
      * @return Entity\Basket
      *
      * @throws Exception
      */
-    public function addProduct(Entity\BasketProduct $basketProduct): Entity\Basket
+    public function addProduct(Entity\Product $product, $quantity): Entity\Basket
     {
         $basket = $this->getOrCreateBasketFromStorage();
+        $basketProduct = Entity\BasketProduct::fromProperties($product->getSku(), $quantity, $product->getPrice());
+
         $basket->addProduct($basketProduct);
 
         return $basket;

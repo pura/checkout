@@ -40,11 +40,12 @@ To run other tests:
 vendor/bin/phpunit tests/Unit
 ```
 
-###ToDos
+### ToDos
 
 1. Add Controller/UI or Command
 2. Add database layer: At the moment data is handled in session, which wouldn't be the case in production. That's only for demo purpose.
 3. Create Rule Engine: As the requirement of offers is simple at the moment, it would work with what it's here now. But, for future proof, I would crete separate offer entity
 recognize by their types and Rules for each offer. 
 For this project, it would have been too big requirement.
+4. Services are left as public to run the test without changing any env variable locally. But in real, would have added separate config for test.
 

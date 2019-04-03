@@ -29,6 +29,7 @@ class OfferCalculatorTest extends TestCase
 
     /**
      * @dataProvider products
+     * @test
      */
     public function testCalculateTotal($products, $expectedPrice)
     {

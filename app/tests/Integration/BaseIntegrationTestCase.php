@@ -2,10 +2,10 @@
 
 namespace App\Tests\Integration;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-class BaseIntegrationTestCase extends WebTestCase
+class BaseIntegrationTestCase extends KernelTestCase
 {
     public function setUp(): void
     {

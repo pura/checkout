@@ -11,6 +11,7 @@ class TotalCalculatorTest extends TestCase
 {
     /**
      * @dataProvider products
+     * @test
      */
     public function testCalculateTotal($products, $expectedPrice)
     {

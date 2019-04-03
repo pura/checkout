@@ -35,6 +35,9 @@ class AddToBasketEventSubscriberTest extends TestCase
         $this->subscriber = new AddToBasketEventSubscriber($this->basketTotalCalculator, $this->basketOfferCalculator);
     }
 
+    /**
+     * @test
+     */
     public function testOnAddToBasketUpdatesTheEventWithTotal()
     {
         $basket = Basket::fromProperties('1234', 20);
